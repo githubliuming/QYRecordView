@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "QYRecordView.h"
-@interface ViewController ()
+@interface ViewController ()<QYRecordViewDelegate>
 @property (weak, nonatomic) IBOutlet QYRecordView *recordView;
 
 @end
@@ -18,6 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    self.recordView.delegate = self;
+    self.recordView.supportTap = YES;
+    self.recordView.supportLongPress = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,4 +36,14 @@
     [self.recordView endAanimation];
 }
 
+
+#pragma mark -QYRecordViewDelegate
+- (void) endRecord:(QYRecordView *)view{
+
+    NSLog(@"end record");
+}
+- (void)startRecord:(QYRecordView *)view{
+
+    NSLog(@"start record");
+}
 @end
