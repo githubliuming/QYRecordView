@@ -15,7 +15,7 @@
 @end
 @interface QYRecordView : UIView
 
-@property(nonatomic,strong)id<QYRecordViewDelegate>delegate;
+@property(nonatomic,assign)id<QYRecordViewDelegate>delegate;
 /**
  *  动画图片
  */
