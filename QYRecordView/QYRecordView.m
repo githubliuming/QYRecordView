@@ -101,6 +101,7 @@
 - (void)layoutSubviews{
 
     [super layoutSubviews];
+    self.anmationLayer.frame = self.bounds;
     double width = self.bounds.size.width *(1- 2 *Scale) ;
     double margin = self.bounds.size.width * Scale;
     self.imageView.frame = CGRectMake(margin, margin, width, width);
